@@ -2,7 +2,7 @@ import React from 'react'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 import styled from 'styled-components'
-import { addItemToCart } from '../../pages/CheckOut'
+import { updateItemInCart as addItemToCart } from '../../pages/CheckOut'
 
 const Products = styled.section`
   display: flex;
@@ -78,7 +78,7 @@ export default () => (
 
             <ActionMenu>
               <strong>{product.price}</strong>
-              <button type="button" onClick={e => addItemToCart(product)}>
+              <button type="button" onClick={e => addItemToCart(product, 1)}>
                 Add
               </button>
             </ActionMenu>

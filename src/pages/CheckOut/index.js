@@ -10,9 +10,19 @@ const getCartItems = () => {
   return []
 }
 
-export const addItemToCart = item => {
+const findItem = (items = [], id) => items.find(({ id }) => id === id)
+
+const hasItem = (items = [], id) => findItem(items, id) === null
+
+export const updateItemInCart = (item, quantity = 1) => {
+  debugger
   const items = getCartItems()
-  save([...items, item])
+
+  if (!hasItem(items, item.id)) {
+    save([...items, { ...item, quantity: 1 }])
+  } else {
+    save([...items.map(value => (value.id === item.id ? { ...item, quantity: value.quantity + quantity } : value))])
+  }
 }
 
 const save = items => {

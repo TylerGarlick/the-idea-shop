@@ -8,10 +8,9 @@ import RouterContent from '../Router'
 import RightNav from './RightNavigation'
 import { DEFAULT_PADDING, FOURTH_PADDING, PRIMARY, SECONDARY, TERCIARY, RED } from '../../styles'
 
-
 const Main = styled.main`
   display: flex;
-  background: ${ TERCIARY.alt300 };
+  background: ${TERCIARY.alt300};
 `
 const Header = styled.header`
   display: flex;
@@ -32,17 +31,17 @@ const UserNavigation = styled.section`
   justify-content: center;
   margin: ${FOURTH_PADDING} 0px;
   margin-left: ${DEFAULT_PADDING};
-  
+
   nav {
     display: none;
     background: red;
     padding: ${DEFAULT_PADDING};
   }
-  
+
   nav:hover {
     display: block;
   }
-  
+
   nav a {
     display: block;
   }
@@ -51,7 +50,7 @@ const UserNavigation = styled.section`
 const UserName = styled.a`
   text-decoration: none;
   cursor: pointer;
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -82,12 +81,15 @@ const MainContent = styled.article`
 
 export default () => {
   const [isRightNavVisible, setRightNavVisible] = useState(false)
-  
+
   return (
     <>
       <Normalize />
       <Header>
         <Brand>The Idea Shop</Brand>
+        <nav>
+          <a href="/checkout">Check Out</a>
+        </nav>
         <UserNavigation>
           <UserName>Tyler Garlick</UserName>
           {/*<nav>*/}
@@ -104,16 +106,9 @@ export default () => {
         <MainContent>
           <RouterContent />
         </MainContent>
-        {isRightNavVisible && (
-          <RightNav>
-            Some things
-          </RightNav>
-        )}
-      
+        {isRightNavVisible && <RightNav>Some things</RightNav>}
       </Main>
-      <Footer>
-        This is my footer..
-      </Footer>
+      <Footer>This is my footer..</Footer>
     </>
   )
 }
