@@ -15,7 +15,7 @@ const findItem = (items = [], id) => items.find(({ id }) => id === id)
 const hasItem = (items = [], id) => findItem(items, id) === null
 
 export const updateItemInCart = (item, quantity = 1) => {
-  debugger
+
   const items = getCartItems()
 
   if (!hasItem(items, item.id)) {

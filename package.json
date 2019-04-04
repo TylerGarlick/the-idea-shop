@@ -6,6 +6,7 @@
     "@reach/router": "^1.2.1",
     "@smooth-ui/core-sc": "^9.0.1",
     "apollo-boost": "^0.1.27",
+    "format-money": "^1.0.0",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
     "react": "^16.8.0",
